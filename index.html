@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonathan Tanaka | Informatics Engineer</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+        :root {
+            --base-color: #FFC300;
+            --primary-color: #FFD400;
+            --secondary-color: #FF5F00;
+            --accent-color: #FFC300;
+            --dark-text: #212529;
+            --light-text: #ffffff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-text);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar Customization */
+        .navbar {
+            background-color: rgba(255, 195, 0, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: var(--dark-text) !important;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+
+        /* Hero Section - Home */
+        .hero-section {
+            background: linear-gradient(135deg, var(--base-color), var(--primary-color));
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+
+        /* Styling foto profile separuh badan */
+        .profile-image-container {
+            width: 350px;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 10px solid #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Posisi gambar dari atas */
+        }
+
+        .profile-image-cropped {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            object-position: center 20%; 
+        }
+
+        .btn-secondary-custom {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+
+        .btn-secondary-custom:hover {
+            background-color: #e65600;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 95, 0, 0.4);
+            color: white;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background-color: var(--secondary-color);
+        }
+
+        /* Timeline Education */
+        .timeline {
+            border-left: 3px solid var(--primary-color);
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -28px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+        }
+
+        /* Cards General Styling */
+        .card {
+            border: none;
+            border-radius: 15px;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 212, 0, 0.3); /* Soft shadow warna emas */
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(255, 212, 0, 0.5);
+        }
+
+        /* --- UPDATE: Contact Section Styling (Cerah) --- */
+        .contact-card-cerah {
+            /* Menggunakan gradient cerah palet Anda */
+            background: linear-gradient(135deg, #ffffff 0%, var(--primary-color) 100%);
+            color: var(--dark-text);
+            border: 2px solid var(--primary-color);
+        }
+
+        .contact-card-cerah .section-subtitle {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .icon-box-contact {
+            color: var(--secondary-color); /* Tetap oranye untuk kontras */
+            font-size: 2rem;
+            margin-right: 15px;
+            width: 40px;
+            text-align: center;
+        }
+
+        .contact-link-container a {
+            /* Warna teks gelap agar terbaca di background cerah */
+            color: var(--dark-text);
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .contact-link-container a:hover {
+            background-color: rgba(255, 95, 0, 0.1); /* Hover soft oranye */
+            color: var(--secondary-color) !important;
+            transform: translateX(5px);
+        }
+
+        /* Info tambahan di bawah link */
+        .contact-link-info {
+            color: #555; /* Abu-abu gelap untuk keterbacaan */
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--dark-text);
+            padding: 30px 0;
+            border-top: 5px solid var(--secondary-color);
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbarNav">
+
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">JT.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#profile">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portofolio">Portofolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 text-center text-lg-start" data-aos="fade-right">
+                    <h5 class="text-uppercase fw-bold mb-3" style="color: var(--secondary-color)">Mahasiswa Teknik Informatika</h5>
+                    <h1 class="display-3 fw-bold mb-4">Jonathan Tanaka</h1>
+                    <p class="lead mb-5">Selamat datang! Saya adalah mahasiswa Teknik Informatika yang antusias dalam pengembangan solusi web inovatif dan riset teknologi masa depan.</p>
+                    <a href="#portofolio" class="btn btn-secondary-custom me-3 mb-3 mb-sm-0">Lihat Proyek</a>
+                    <a href="#contact" class="btn btn-outline-dark btn-lg rounded-pill px-4">Hubungi Saya</a>
+                </div>
+                <div class="col-lg-5 d-flex justify-content-center justify-content-lg-end mt-5 mt-lg-0" data-aos="zoom-in">
+                    <div class="profile-image-container">
+                        <img src="img/p.jpg" alt="Jonathan Tanaka" class="profile-image-cropped">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="profile" class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5" data-aos="fade-up">
+                    <h2 class="section-title">Data Diri</h2>
+                    <div class="card p-4 shadow-sm mb-4">
+                        <p><strong>Nama:</strong> Jonathan Tanaka</p>
+                        <p><strong>TTL:</strong> Malang, 19 Februari 2005</p>
+                        <p><strong>Alamat:</strong> Green Pakis Regency</p>
+                        <p><strong>Minat:</strong> Bidang Teknologi (Fullstack Web & Machine Learning)</p>
+                    </div>
+                </div>
+                <div class="col-md-7" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="section-title">Edukasi</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h5>SD Marsudisiwi</h5>
+                            <p class="text-muted">Pendidikan Dasar</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5>SMPK Cor Jesu</h5>
+                            <p class="text-muted">Pendidikan Menengah Pertama</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5>SMAK Santa Maria Malang</h5>
+                            <p class="text-muted">Pendidikan Menengah Atas</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5 style="color: var(--secondary-color)">Universitas Ma Chung</h5>
+                            <p class="mb-0 fw-bold">Teknik Informatika</p>
+                            <p class="text-muted">Sedang Menempuh Pendidikan (Semester 6)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portofolio">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold">Portofolio Proyek</h2>
+                <p class="text-muted">Beberapa hasil karya pengembangan perangkat lunak.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="flip-left">
+                    <div class="card h-100 p-3">
+                        <div class="card-body">
+                            <h5 class="fw-bold">Complaint Platform</h5>
+                            <p class="card-text text-muted small">Sistem pengaduan judi online menggunakan framework Scrum.</p>
+                            <span class="badge bg-dark">PHP</span> <span class="badge bg-dark">Tailwind</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
+                    <div class="card h-100 p-3">
+                        <div class="card-body">
+                            <h5 class="fw-bold">Background Remover AI</h5>
+                            <p class="card-text text-muted small">Aplikasi hybrid menggunakan algoritma GrabCut & OpenCV.</p>
+                            <span class="badge bg-dark">Python</span> <span class="badge bg-dark">OpenCV</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+                    <div class="card h-100 p-3">
+                        <div class="card-body">
+                            <h5 class="fw-bold">Database System</h5>
+                            <p class="card-text text-muted small">Implementasi Oracle PL/SQL untuk manajemen data kompleks.</p>
+                            <span class="badge bg-dark">Oracle</span> <span class="badge bg-dark">SQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8" data-aos="fade-right">
+                    <h2 class="section-title">Experience & Research</h2>
+                    <ul class="list-unstyled mt-4 fs-5">
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="bi bi-patch-check-fill me-3 text-success fs-3"></i>
+                            <span>Riset MBKM: Hand Gesture Translator menggunakan MediaPipe & OpenCV.</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="bi bi-patch-check-fill me-3 text-success fs-3"></i>
+                            <span>Pengembangan Fullstack Web App untuk Manajemen Proyek.</span>
+                        </li>
+                    </ul>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="card contact-card-cerah p-5 shadow-lg" data-aos="zoom-in">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">Pusat Kontak & Informasi</h2>
+                    <p class="section-subtitle">Hubungi saya langsung atau telusuri tautan penting berikut.</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-5 mb-md-0 contact-link-container">
+                        <h4 class="fw-bold mb-4 text-center text-md-start">Hubungi Saya</h4>
+                        <a href="https://wa.me/628125977472" target="_blank" class="d-flex align-items-center">
+                            <div class="icon-box-contact"><i class="bi bi-whatsapp"></i></div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">WhatsApp</h6>
+                                <span class="small contact-link-info">0812-5977-472</span>
+                            </div>
+                        </a>
+                        <a href="mailto:jonathantanaka8@gmail.com" class="d-flex align-items-center">
+                            <div class="icon-box-contact"><i class="bi bi-envelope"></i></div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Email</h6>
+                                <span class="small contact-link-info">jonathantanaka8@gmail.com</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 contact-link-container">
+                        <h4 class="fw-bold mb-4 text-center text-md-start">Tautan Penting</h4>
+                        <a href="https://machung.ac.id/" target="_blank" class="d-flex align-items-center">
+                            <div class="icon-box-contact"><i class="bi bi-mortarboard"></i></div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Universitas Ma Chung</h6>
+                                <span class="small contact-link-info">Kunjungi Website Kampus</span>
+                            </div>
+                        </a>
+                        <a href="https://lockey-irawan.github.io/" target="_blank" class="d-flex align-items-center">
+                            <div class="icon-box-contact"><i class="bi bi-person-workspace"></i></div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Project Manager</h6>
+                                <span class="small contact-link-info">Lihat Profil Kolaborasi</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-4">
+        <div class="container">
+            <p class="mb-0 fw-bold">Jonathan Tanaka - Informatics Engineering</p>
+            <small>Built with Bootstrap 5. © 2026.</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Animations
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>
